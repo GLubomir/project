@@ -1,36 +1,27 @@
 "use strict";
 
-if (4 == 9) {
-	console.log('ok!');
-} else {
-	console.log('error');
-}
+// let result = '';
+
+// const lenght = 7;
+
+// for (let i = 1; i < lenght; i++){
+
+// 	for (let j = 0; j < i; j++){
+// 		result += "*";
+// 	}
 
 
-// if (num < 49) {
-// 	console.log('error');
-// } else if (num > 100){
-// 	console.log('Много')
-// } else {
-// 	console.log('ok!');
+// 	result += '\n';
 // }
+// console.log(result);
 
-// (num === 50) ? console.log('ok!') : console.log('error');
-
-
-const num = 50;
-
-switch (num) {
-	case 49:
-		console.log('Неверно');
-		break;
-	case 100:
-		console.log('Неверно');
-		break;
-	case 51:
-		console.log('В точку');
-		break;
-	default:
-		console.log('Не в этот раз');
-		break;
+first: for (let i = 0; i < 3; i++){
+	console.log(`First level: ${i}`)
+	for (let j = 0; j < 3; j++){
+		console.log(`Second level: ${j}`)
+		for (let k = 0; k < 3; k++){
+			if (k === 2) continue first;
+			console.log(`Third level: ${k}`)
+		}
+	}
 }
