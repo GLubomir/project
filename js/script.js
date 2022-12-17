@@ -1,27 +1,41 @@
 "use strict";
 
-// let result = '';
-
-// const lenght = 7;
-
-// for (let i = 1; i < lenght; i++){
-
-// 	for (let j = 0; j < i; j++){
-// 		result += "*";
-// 	}
+const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
 
-// 	result += '\n';
+const personalMovieDB = {
+	count: numberOfFilms,
+	movies: {},
+	actors: {},
+	genres: [],
+	privat: false
+};
+
+let i = 0;
+
+while (i < 2) {
+	i++;
+	let a = prompt('Один из последних просмотренных фильмов?', '');
+	let b = prompt('На сколько оцените его?', '');
+
+	if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+		personalMovieDB.movies[a] = b;	
+		console.log('done');
+	} else {
+		console.log('error');
+		i--;
+	}	
+}
+// for (let i = 0; i < 2; i++){
+	
 // }
-// console.log(result);
 
-first: for (let i = 0; i < 3; i++){
-	console.log(`First level: ${i}`)
-	for (let j = 0; j < 3; j++){
-		console.log(`Second level: ${j}`)
-		for (let k = 0; k < 3; k++){
-			if (k === 2) continue first;
-			console.log(`Third level: ${k}`)
-		}
-	}
+if (personalMovieDB.count < 10) {
+	console.log('Посмотренно довольно мало фильмов');
+} else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+	console.log('Вы классический зритель');
+} else if (personalMovieDB >= 30) {
+	console.log('Вы киноман');
+} else {
+	console.log('Произошла ошибка');
 }
