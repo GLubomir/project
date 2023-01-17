@@ -1,20 +1,13 @@
 "use strict";
 
 
-const numberOfFilms = +prompt('Cколько фильмов вы уже посмотрели?', '');
-
-const personalMovieDB = {
-	count: numberOfFilms,
-	movies: {},
-	actors: {},
-	genres: [],
-	privat: false
-};
-
-const a = prompt('Один из последних просмотренных фильмов?', '');
-const b = prompt('На сколько оцениваете это фильм?', '');
-const c = prompt('Один из последних просмотренных фильмов?', '');
-const d = prompt('На сколько оцениваете это фильм?', '');
-personalMovieDB.movies[a] = b;
-personalMovieDB.movies[c] = d;
-console.log(personalMovieDB)
+first: for (let i = 0; i < 3; i++){
+	console.log(`First level: ${i}`);
+	for (let j = 0; j < 3; j++){
+		console.log(`Second level: ${j}`);
+		for (let k = 0; k < 3; k++){
+			if (k === 2) break first;
+			console.log(`Three level: ${k}`);
+		}
+	}
+}
